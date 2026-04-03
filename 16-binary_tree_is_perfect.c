@@ -3,12 +3,15 @@
 /**
  * is_perfect- checks if a tree is full, and all leaves match input depth
  * @tree: tree to check
+ * @level: current level of the node at *tree
+ * @depth: max depth of tree
  * Return: 1 for perfect, else 0
  */
 
 int is_perfect(const binary_tree_t *tree, size_t level, size_t depth)
 {
 	int left, right;
+
 	if (!tree->left && !tree->right)
 		return (level + 1 == depth);
 	if (!tree->left || !tree->right)
